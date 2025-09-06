@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Registration - Profile Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Student Registration Form</h1>
+
+
+    <input type="text" id="search" placeholder="Search by name, programme, or interest..." aria-label="Search profiles" style="margin-bottom:1rem;width:100%;padding:0.7em;font-size:1em;">
+
+    <form id="regForm" novalidate>
+      <div class="form-group">
+        <label for="first">First Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="first" name="first" required autocomplete="given-name" />
+        <small class="error" id="err-first"></small>
+      </div>
+      <div class="form-group">
+        <label for="last">Last Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="last" name="last" required autocomplete="family-name" />
+        <small class="error" id="err-last"></small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email <span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+        <small class="error" id="err-email"></small>
+      </div>
+      <div class="form-group">
+        <label for="prog">Programme <span aria-hidden="true">*</span></label>
+        <input type="text" id="prog" name="prog" required />
+        <small class="error" id="err-prog"></small>
+      </div>
+      <fieldset>
+        <legend>Year of Study <span aria-hidden="true">*</span></legend>
+        <label><input type="radio" name="year" value="1" required /> 1</label>
+        <label><input type="radio" name="year" value="2" /> 2</label>
+        <label><input type="radio" name="year" value="3" /> 3</label>
+        <label><input type="radio" name="year" value="4" /> 4</label>
+        <small class="error" id="err-year"></small>
+      </fieldset>
+      <div class="form-group">
+        <label for="interests">Interests</label>
+        <input type="text" id="interests" name="interests" placeholder="e.g. AI, Web, UX" />
+      </div>
+      <div class="form-group">
+        <label for="photo">Photo URL</label>
+        <input type="url" id="photo" name="photo" placeholder="https://..." />
+      </div>
+
+    
+      <div aria-live="polite" class="sr" id="live"></div>
+
+      
+      <div style="margin-bottom:1rem;">
+        <img id="photoPreview" src="https://placehold.co/128" alt="Photo Preview" style="width:100px;height:100px;border-radius:50%;border:2px solid var(--primary);object-fit:cover;">
+      </div>
+
+     
+      <button type="submit">Submit Form</button>
+      <button type="button" id="cancelEdit">Cancel Edit</button>
+    </form>
+
+    <section aria-label="Registered Students">
+      <h2>Profile Cards</h2>
+      <div id="cards" class="card-list"></div>
+    </section>
+
+    <section aria-label="Summary Table">
+      <h2>Summary Table</h2>
+      <table id="summary">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Programme</th>
+            <th>Year</th>
+            <th>Interests</th>
+            <th>Photo</th>
+            <th>Remove/Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+:root {
+  --primary: #253858;
+  --accent: #e63946;
+  --bg: #f1f6fb;
+  --good: #2e7d32;
+  --err: #b71c1c;
+  --font: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font);
+  margin: 0;
+  color: var(--primary);
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px #25385822;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+  padding: 0.5rem;
+  border: 1px solid #c1c7d0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--accent);
+}
+
+fieldset {
+  border: 1px solid #c1c7d0;
+  border-radius: 4px;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+legend {
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent);
+}
+
+.error {
+  color: var(--err);
+  font-size: 0.9em;
+  min-height: 1.2em;
+}
+
+.sr {
+  position: absolute;
+  left: -9999px;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-person {
+  background: var(--bg);
+  border: 1px solid #c1c7d0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 2px 8px #25385810;
+  position: relative;
+}
+
+.card-person img {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border: 2px solid var(--primary);
+  background: #fff;
+}
+
+.card-person .badge {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.2em 0.8em;
+  font-size: 0.95em;
+  margin-right: 0.5em;
+}
+
+.card-person .remove, .card-person .edit {
+  position: absolute;
+  top: 5px;
+  font-size: 1.1em;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.card-person .remove { right: 10px; }
+.card-person .edit { left: 10px; background: #557a95; }
+
+.card-person .remove:focus, .card-person .edit:focus {
+  outline: 2px solid #fff;
+}
+
+#summary {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f7fafd;
+}
+
+#summary th, #summary td {
+  border: 1px solid #c1c7d0;
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+
+#summary th {
+  background: var(--primary);
+  color: #fff;
+}
+
+#summary td img {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#summary .remove-table, #summary .edit-table {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+#summary .edit-table { background: #557a95; }
+
+
+.highlight {
+  animation: flashHighlight 2s ease;
+  border: 2px solid #28a745;
+  border-radius: 5px;
+  background-color: #d4edda;
+}
+
+@keyframes flashHighlight {
+  0% { background-color: #d4edda; }
+  50% { background-color: #fff3cd; }
+  100% { background-color: #d4edda; }
+}
+
+
+#regForm.edit-mode {
+  background: #fff3cd;
+  border: 2px solid #ffca2c;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+
+#cancelEdit {
+  display: none;
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+#cancelEdit:hover {
+  background: #e63946;
+}
+
+@media (max-width: 700px) {
+  .card-list { flex-direction: column; align-items: center; }
+  main { padding: 0.5rem; }
+}
+
+@media (max-width: 500px) {
+  #summary .remove-table, #summary .edit-table {
+    padding: 0.5em;
+    font-size: 0.9em;
+  }
+}
