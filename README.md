@@ -35,5 +35,6 @@ It includes:
 - README.md     Project documentation
 
 
+
 ## Repository
-- GitHub URL: [kantinina1](https://github.com/kantinina1/Lab4StudentRegistrationForm-WAD621s.git)
+- GitHub URL: [kantinina1-Lab4RegistrationForm](https://github.com/kantinina1/Lab4StudentRegistrationForm-WAD621s.git)
